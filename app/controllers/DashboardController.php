@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
 
 class DashboardController extends \BaseController {
 
@@ -18,15 +19,19 @@ class DashboardController extends \BaseController {
 		$tclass = ClassModel::count();
 		$tsubject = Subject::count();
 		$tstudent=Student::count();
- 		$totalAttendance = Attendance::groupBy('date')->get();
- 		$totalExam = Marks::groupBy('exam')->groupBy('subject')->get();
+		$totalAttendance = Teachers::count();
+ 		//$totalAttendance = Attendance::groupBy('date')->get();
+ 		//$totalExam = Marks::groupBy('exam')->groupBy('subject')->get();
+ 		$totalExam = 0;
 		$book = AddBook::count();
  		$total = [
  			'class' =>$tclass,
  			'student' =>$tstudent,
  			'subject' =>$tsubject,
- 			'attendance' =>count($totalAttendance),
- 			'exam' =>count($totalExam),
+ 			//'attendance' =>count($totalAttendance),
+ 			//'exam' =>count($totalExam),
+ 			'attendance' =>$totalAttendance,
+ 			'exam' =>$totalExam,
 			'book' => $book
  		];
  	// 	//graph data
@@ -46,7 +51,20 @@ class DashboardController extends \BaseController {
  		$incomes=$this->datahelper($monthlyIncome);
  		$expences=$this->datahelper($monthlyExpences);
  		$balance = $incomeTotal - $expenceTotal;
-		return View::Make('dashboard',compact('error','success','total','incomes','expences','balance'));
+
+ 		$date = Carbon::now();
+ 		$grades = Marks::select('*')->where('regiNo','=',Auth::user()->login)->get();
+ 		$subjects = Subject::all(); 
+
+ 		$gradeshistories = Marks::select('session')->Distinct('session')->get();
+
+
+//$datases = Session::all();
+//dd(Auth::user()->login);
+ 		
+ 		//dd($gradeshistories);
+
+		return View::Make('dashboard',compact('error','success','total','incomes','expences','balance', 'grades', 'subjects', 'date', 'gradeshistories'));
 	}
 	private function datahelper($data)
  	{

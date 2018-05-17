@@ -73,7 +73,7 @@
             @foreach($incomes as $income)
                 <tr>
                     <td>{{$income->name}}</td>
-                    <td>{{$income->amount}}</td>
+                    <td>₱ {{$income->amount}}</td>
                     <td>{{$income->description}}</td>
                     <td>{{date_format(date_create($income->date), 'd/m/Y');}}</td>
                 </tr>
@@ -81,7 +81,7 @@
 
 
             @endforeach
-            <td class="text-right"><strong>Total:</strong></td><td>{{$intotal[0]->total}} tk.</td><td></td><td></td>
+            <td class="text-right"><strong>Total:</strong></td><td>₱ {{$intotal[0]->total}}</td><td></td><td></td>
             </tbody>
         </table>
     </div>
@@ -102,7 +102,7 @@
                 @foreach($expences as $expence)
                     <tr>
                         <td>{{$expence->name}}</td>
-                        <td>{{$expence->amount}}</td>
+                        <td>₱ {{$expence->amount}}</td>
                         <td>{{$expence->description}}</td>
                         <td>{{date_format(date_create($expence->date), 'd/m/Y');}}</td>
                     </tr>
@@ -110,7 +110,7 @@
 
 
                 @endforeach
-                <td class="text-right"><strong>Total:</strong></td><td>{{$extotal[0]->total}} tk.</td><td></td><td></td>
+                <td class="text-right"><strong>Total:</strong></td><td>₱ {{$extotal[0]->total}}</td><td></td><td></td>
                 </tbody>
             </table>
         </div>
@@ -120,7 +120,7 @@
 <div  class="row">
     <div class="col-md-12 text-center">
 
-            <h4><strong>Balance: {{$balance[0]}}</strong> tk.</h4>
+            <h4><strong>Balance: ₱ {{$balance[0]}}</strong></h4>
 
 
         </div>

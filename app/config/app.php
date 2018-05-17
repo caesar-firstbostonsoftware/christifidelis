@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL ^ E_DEPRECATED);
+
 return array(
 
     /*
@@ -78,9 +80,9 @@ return array(
     |
     */
 
-    'key' => 'cdc2a7d592b596df70925f07524eb4e9',
+    'key' => 'wASMBwSPl1wKnvxcJje3MBrDUF3SqkU4',
 
-    'cipher' => MCRYPT_RIJNDAEL_128,
+    'cipher' => MCRYPT_RIJNDAEL_256,
 
     /*
     |--------------------------------------------------------------------------

@@ -149,8 +149,6 @@
                                  <div class="input-group">
                                      <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                      <?php  $data=[
-                                       'Class Test'=>'Class Test',
-                                       'Model Test'=>'Model Test',
                                        'First Term'=>'First Term',
                                        'Mid Term'=>'Mid Term',
                                        'Final Exam'=>'Final Exam'
@@ -178,12 +176,12 @@
                                                          <thead>
                                                              <tr>
                                                                 <th>Regi No</th>
-                                                                  <th>Roll No</th>
+                                                             <!--     <th>Roll No</th> -->
                                                                   <th>Name</th>
-                                                                    <th>Written</th>
-                                                                    <th>MCQ</th>
-                                                                    <th>Practical</th>
-                                                                    <th>SBA</th>
+                                                                    <th>Quiz</th>
+                                                                    <th>Exam</th>
+                                                                    <th>Oral</th>
+                                                                    <th>Extra</th>
                                                                  <th>Total</th>
                                                                  <th>Grade</th>
                                                                   <th>Point</th>
@@ -195,7 +193,7 @@
                                                            @foreach($marks as $mark)
                                                              <tr>
                                                                   <td>{{$mark->regiNo}}</td>
-                                                            <td>{{$mark->rollNo}}</td>
+                                                      <!--      <td>{{$mark->rollNo}}</td>  -->
                                                               <td>{{$mark->firstName}} {{$mark->middleName}} {{$mark->lastName}}</td>
                                                                 <td>{{$mark->written}}</td>
                                                                   <td>{{$mark->mcq}}</td>

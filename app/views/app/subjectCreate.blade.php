@@ -78,13 +78,13 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-md-2">
+                          <div class="col-md-12">
+ <!--                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <label class="control-label" for="stdgroup">Subject Group</label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                            <select name="subgroup" class="form-control" required >
+                                            <select name="subgroup" class="form-control" >
                                                 <option value="N/A">N/A</option>
                                                 <option value="Bangla">Bangla</option>
                                                 <option value="English">English</option>
@@ -99,7 +99,7 @@
                                         <label class="control-label" for="stdgroup">Student Group</label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                            <select name="stdgroup" class="form-control" required >
+                                            <select name="stdgroup" class="form-control" >
                                                 <option value="N/A">N/A</option>
                                                 <option value="Science">Science</option>
                                                 <option value="Arts">Arts</option>
@@ -109,6 +109,9 @@
                                         </div>
                                     </div>
                                 </div>
+ -->                               
+ <input id="subgroup" name="subgroup" type="hidden" value="N/A">
+ <input id="stdgroup" name="stdgroup" type="hidden" value="N/A">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label" for="class">Class</label>
@@ -130,10 +133,18 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                             <select name="gradeSystem" required class="form-control">
-                                                @if(count($gpa)==2)
-                                                    <option value="1">100 Marks </option>
-                                                    <option value="2">50 Marks </option>
-                                                @endif
+                               <option value="Grade 1" selected="true">Grade 1</option>
+                               <option value="Grade 2">Grade 2 </option>
+                               <option value="Grade 3">Grade 3 </option>
+                               <option value="Grade 4">Grade 4 </option>
+                               <option value="Grade 5">Grade 5 </option>
+                               <option value="Grade 6">Grade 6 </option>
+                               <option value="Grade 7">Grade 7 </option>
+                               <option value="Grade 8">Grade 8 </option>
+                               <option value="Grade 9">Grade 9 </option>
+                               <option value="Grade 10">Grade 10 </option>
+                               <option value="Grade 11">Grade 11 </option>
+                               <option value="Grade 12">Grade 12 </option>
                                             </select>
                                         </div>
                                     </div>
@@ -146,8 +157,8 @@
                                 <h3 class="text-info">Exam Details</h3>
                                 <div class="alert alert-warning">
                                     <h5 class="text-danger"> <i class="glyphicon glyphicon-hand-right"></i>
-                                        If individual(Written,MCQ,SBA,Practical) pass not required then, leave those pass marks
-                                        fields(Written,MCQ,SBA,Practical) empty or fill with 0
+                                        If (Quiz,Exam,Oral,Extra) passing percentage is not required, leave those passing percentage
+                                        fields (Quiz,Exam,Oral,Extra) empty or fill with 0
                                     </h5>
                             </div>
                                 <hr>
@@ -157,11 +168,11 @@
                             <div class="col-md-12">
                                 <div class="col-md-3"></div>
                                 <div class="col-md-3">
-                                    <label>Full Marks</label>
+                                    <label>Full Percentage</label>
                                 </div>
                                 <div class="col-md-1"></div>
                                 <div class="col-md-3">
-                                    <label>Pass Marks</label>
+                                    <label>Passing Percentage</label>
                                 </div>
                                 <div class="col-md-2"></div>
                             </div>
@@ -171,15 +182,15 @@
                                 <div class="col-md-2"></div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="totalfull" class="col-md-3 control-label">Total: </label>
+                                        <label for="totalfull" class="col-md-6 control-label">Total Percentage: </label>
                                         <div class="col-md-3">
-                                            <input type="text" required class="form-control" required="true" name="totalfull"  placeholder="0">
+                                            <input type="text" required class="form-control" required="true" name="totalfull"  placeholder="100" value="100" readonly="readonly">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="totalpass" class="col-md-3 control-label">Total: </label>
+                                        <label for="totalpass" class="col-md-6 control-label">Total Percentage: </label>
                                         <div class="col-md-3">
                                             <input type="text" required class="form-control" name="totalpass"  placeholder="0">
                                         </div>
@@ -193,7 +204,7 @@
                                 <div class="col-md-2"></div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="wfull" class="col-md-3 control-label">Written: &nbsp;</label>
+                                        <label for="wfull" class="col-md-6 control-label">Quiz/Assignment: &nbsp;</label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="wfull" required="true"  placeholder="0">
                                         </div>
@@ -201,7 +212,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="wpass" class="col-md-3 control-label">Written: &nbsp;</label>
+                                        <label for="wpass" class="col-md-6 control-label">Quiz/Assignment: &nbsp;</label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="wpass"  placeholder="0">
                                         </div>
@@ -215,7 +226,7 @@
                                 <div class="col-md-2"></div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="mfull" class="col-md-3 control-label">MCQ: </label>
+                                        <label for="mfull" class="col-md-6 control-label">Written Exam: </label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="mfull" required="true" placeholder="0">
                                         </div>
@@ -223,7 +234,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="mpass" class="col-md-3 control-label">MCQ: </label>
+                                        <label for="mpass" class="col-md-6 control-label">Written Exam: </label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="mpass"  placeholder="0">
                                         </div>
@@ -237,7 +248,7 @@
                                 <div class="col-md-2"></div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="sfull" class="col-md-3 control-label">SBA: </label>
+                                        <label for="sfull" class="col-md-6 control-label">Oral Participation: </label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="sfull" required="true" placeholder="0">
                                         </div>
@@ -245,7 +256,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="spass" class="col-md-3 control-label">SBA: </label>
+                                        <label for="spass" class="col-md-6 control-label">Oral Participation: </label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="spass"  placeholder="0">
                                         </div>
@@ -259,7 +270,7 @@
                                 <div class="col-md-2"></div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="pfull" class="col-md-3 control-label">Practical:&nbsp; </label>
+                                        <label for="pfull" class="col-md-6 control-label">Extra Curricular Activities:&nbsp; </label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="pfull" required="true"  placeholder="0">
                                         </div>
@@ -267,7 +278,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="ppass" class="col-md-3 control-label">Practical:&nbsp;</label>
+                                        <label for="ppass" class="col-md-6 control-label">Extra Curricular Activities:&nbsp;</label>
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" name="ppass"  placeholder="0">
                                         </div>

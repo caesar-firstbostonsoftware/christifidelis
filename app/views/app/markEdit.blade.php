@@ -60,7 +60,7 @@
                  <div class="col-md-12">
                    <div class="col-md-2">
                      <div class="form-group">
-                         <label for="written">Written</label>
+                         <label for="written">Quiz</label>
                          <div class="input-group">
                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                              <input type="text" class="form-control" required="true"  name="written" value="{{$marks->written}}">
@@ -69,7 +69,7 @@
                    </div>
                    <div class="col-md-2">
                      <div class="form-group">
-                         <label for="mcq">MCQ</label>
+                         <label for="mcq">Exam</label>
                          <div class="input-group">
                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                              <input type="text" class="form-control" required="true"  name="mcq" value="{{$marks->mcq}}">
@@ -78,7 +78,7 @@
                    </div>
                    <div class="col-md-2">
                      <div class="form-group">
-                         <label for="practical">Practical</label>
+                         <label for="practical">Oral</label>
                          <div class="input-group">
                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                              <input type="text" class="form-control" required="true"   name="practical" value="{{$marks->practical}}">
@@ -87,7 +87,7 @@
                    </div>
                    <div class="col-md-2">
                      <div class="form-group">
-                         <label for="ca">SBA</label>
+                         <label for="ca">Extra</label>
                          <div class="input-group">
                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                              <input type="text" class="form-control" required="true"   name="ca" value="{{$marks->ca}}">

@@ -24,16 +24,17 @@
 @if (Session::get('accessdined'))
 <div class="alert alert-danger">
   <button data-dismiss="alert" class="close" type="button">×</button>
-  <strong>Process Faild.</strong> {{ Session::get('accessdined')}}
+  <strong>Process Failed.</strong> {{ Session::get('accessdined')}}
 
 </div>
 @endif
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <!-- /top tiles -->
+    @if (Session::get('userRole')!="Student")  
     <div class="row tile_count text-center">
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-home green"></i>     Class</span>
+        <span class="count_top"><i class="fa fa-2x fa-home green"></i> Sections</span>
         <div class="count red">{{$total['class']}}</div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
@@ -47,11 +48,11 @@
     </div>
     <div class="row tile_count text-center">
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-edit green"></i> Attendance(Days)</span>
+        <span class="count_top"><i class="fa fa-2x fa-edit green"></i> Teachers/Staffs</span>
         <div class="count red">{{$total['attendance']}}</div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-pencil green"></i> Exams</span>
+        <span class="count_top"><i class="fa fa-2x fa-pencil green"></i> Memos</span>
         <div class="count blue">{{$total['exam']}}</div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
@@ -60,8 +61,92 @@
       </div>
     </div>
     <!-- /top tiles -->
+    @else
+    <div class="container">
+      <h2>Current Year {{$date->year}}</h2>
+     <table class="table table-striped">
+    <thead>
+      <tr class="info">
+        <th>Subject</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($grades as $grade)
+      @if($grade->session == $date->year)
+      <tr>
+        <td>
+          @foreach($subjects as $subject)
+          @if($grade->subject == $subject->code)
+            {{$subject->name}}
+          @endif
+      @endforeach
+        </td>
+
+        <td>
+          @if($grade->point < 70)
+          <font color="red">
+          @else
+          <font color="blue">
+          @endif 
+          {{$grade->point}}
+          </font>
+        </td>
+      </tr>
+      @endif
+      @endforeach
+    </tbody>
+  </table>
+</div>
+    
+    <div class="container">
+      @foreach($gradeshistories as $gradeshistory)
+      @if($gradeshistory->session != $date->year)
+      <div class="well">
+      <h2>History {{$gradeshistory->session}}</h2>
+     <table class="table table-striped">
+    <thead>
+      <tr class="info">
+        <th>Subject</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($grades as $grade)
+      @if($grade->session == $gradeshistory->session)
+      <tr>
+        <td>
+          @foreach($subjects as $subject)
+          @if($grade->subject == $subject->code)
+            {{$subject->name}}
+          @endif
+      @endforeach
+        </td>
+
+        <td>
+          @if($grade->point < 70)
+          <font color="red">
+          @else
+          <font color="blue">
+          @endif 
+          {{$grade->point}}
+          </font>
+        </td>
+      </tr>
+      @endif
+      @endforeach
+    </tbody>
+  </table>
+</div>
+  @endif
+  @endforeach
+</div>
+
+
+    @endif
     <!-- Graph start -->
-    <div class="row">
+    @if (Session::get('userRole')!="Student") 
+  <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
@@ -80,12 +165,12 @@
     </div>
 
   </div>
-</div>
-
-
+</div> 
+@endif
 
 @stop
 @section("script")
+
 <script src="<?php echo url();?>/js/Chart.min.js"></script>
 
 <script>
@@ -126,4 +211,5 @@ Chart.defaults.global.legend = {
 
 
 </script>
+
 @stop

@@ -16,7 +16,7 @@ class subjectController extends \BaseController {
 	*/
 	public function index()
 	{
-		$classes = ClassModel::select('code','name')->orderby('code','asc')->get();
+		$classes = ClassModel::select('code','name')->orderby('id','asc')->get();
 		$gpa =GPA::select('for')->distinct()->get();
 
 		return View::Make('app.subjectCreate',compact('classes','gpa'));
@@ -62,6 +62,7 @@ class subjectController extends \BaseController {
 
 			}
 			else {
+				//dd(Input::get('gradeSystem'));
 				$subject = new Subject;
 				$subject->name = Input::get('name');
 				$subject->code = Input::get('code');
@@ -151,8 +152,8 @@ class subjectController extends \BaseController {
 			'name' => 'required',
 			'code' => 'required',
 			'type' => 'required',
-			'subgroup' => 'required',
-			'stdgroup' => 'required',
+			//'subgroup' => 'required',
+			//'stdgroup' => 'required',
 			'class' => 'required',
 			'gradeSystem' => 'required',
 			'totalfull' => 'required',

@@ -21,7 +21,7 @@
                             <th>Code</th>
                             <th>Name</th>
                             <th>Description</th>
-                            <th>Bangla/English Combine Pass</th>
+                      <!--      <th>Bangla/English Combine Pass</th>  -->
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -32,13 +32,13 @@
                                 <td>{{$class->code}}</td>
                                 <td>{{$class->name}}</td>
                                 <td>{{$class->description}}</td>
-                                <td>
+                       <!--         <td>
                                     @if($class->combinePass)
                                         <span class="badge" style="background: green;">Yes</span>
                                     @else
                                         <span class="badge" style="background: red;">No</span>
                                     @endif
-                                </td>
+                                </td>   -->
                                 <td>
                                     <a title='Edit' class='btn btn-info' href='{{url("/class/edit")}}/{{$class->id}}'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='{{url("/class/delete")}}/{{$class->id}}'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
                                 </td>

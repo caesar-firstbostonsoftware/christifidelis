@@ -21,6 +21,9 @@ Route::get('/useredit/{id}', 'UsersController@edit');
 Route::post('/userupdate', 'UsersController@update');
 Route::get('/userdelete/{id}', 'UsersController@delete');
 
+
+Route::get('/student/attendance', 'UsersController@studentattendance');
+
 //Route::get('/users/regi','UsersController@postRegi');
 
 //Class routes
@@ -334,6 +337,10 @@ Route::get('/workoutside/delete/{id}', 'teacherController@workOutsideDelete');
 Route::get('/class-off', 'attendanceController@classOffIndex');
 Route::post('/class-off/store', 'attendanceController@classOffStore');
 Route::get('/class-off/delete/{id}', 'attendanceController@classOffDelete');
+
+//gallery shool offer
+Route::get('/gallery', 'HomeController@gallery');
+Route::get('/offer', 'HomeController@soffer');
 
 
 //fire attendance command

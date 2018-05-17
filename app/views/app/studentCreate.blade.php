@@ -113,6 +113,7 @@
                               </div>
                           </div>
                       </div>
+ <!--                     
                 <div class="col-md-4">
                   <div class="form-group">
                   <label class="control-label" for="group">Group</label>
@@ -132,9 +133,27 @@
                   </div>
                 </div>
                   </div>
+-->
+                <div class="col-md-4">
+                  <div class="form-group">
+                  <label class="control-label" for="shift">Shift</label>
 
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                      <select name="shift" required="true" class="form-control" >
+                        <option value="Day">Day</option>
+                          <option value="Morning">Morning</option>
+                     </select>
+
+                  </div>
+                </div>
+                  </div>
+
+
+ <input id="group" name="group" type="hidden" value="N/A">
               </div>
             </div>
+ <!--           
             <div class="row">
               <div class="col-md-12">
                 <div class="col-md-4">
@@ -153,7 +172,7 @@
                   </div>
                 </div>
               </div>
-
+-->
             <div class="row">
               <div class="col-md-12">
                   <h3 class="text-info"> Student's Detail</h3>

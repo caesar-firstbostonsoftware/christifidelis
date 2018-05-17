@@ -101,7 +101,7 @@ class markController extends \BaseController {
                 $marks->ca=$cas[$i];
 
                 $isFail = false;
-
+/**
                 if($subjectInfo->wpass && $writtens[$i] < $subjectInfo->wpass){
                     $isFail = true;
                 }
@@ -116,7 +116,7 @@ class markController extends \BaseController {
                 if($subjectInfo->spass && $cas[$i] < $subjectInfo->spass){
                     $isFail = true;
                 }
-
+**/
                 //round the fraction marks
                 $totalMark = round($writtens[$i]+$mcqs[$i]+$practicals[$i]+$cas[$i]);
 
@@ -297,7 +297,7 @@ class markController extends \BaseController {
             $marks->ca=Input::get('ca');
 
             $isFail = false;
-
+/**
             if($subjectInfo->wpass && $marks->written < $subjectInfo->wpass){
                 $isFail = true;
             }
@@ -312,7 +312,7 @@ class markController extends \BaseController {
             if($subjectInfo->spass && $marks->ca < $subjectInfo->spass){
                 $isFail = true;
             }
-
+**/
             //round the fraction marks
             $totalMark = round($marks->written+$marks->mcq+$marks->practical+$marks->ca);
             if($totalMark < $subjectInfo->totalpass){

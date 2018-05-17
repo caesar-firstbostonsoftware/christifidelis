@@ -95,6 +95,8 @@
                                                         <select id="shift" name="shift"  class="form-control" >
                                                             <option value="Day">Day</option>
                                                             <option value="Morning">Morning</option>
+                                                            <option value="Afternoon">Afternoon</option>
+                                                            <option value="Night">Night</option>
                                                         </select>
 
                                                     </div>
@@ -136,9 +138,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                                         <select name="exam" required="true" class="form-control" >
-                                                            <option value="">-Slect Exam-</option>
-                                                            <option value="Class Test">Class Test</option>
-                                                            <option value="Model Test">Model Test</option>
+                                                            <option value="">Select Exam</option>
                                                             <option value="First Term">First Term</option>
                                                             <option value="Mid Term">Mid Term</option>
                                                             <option value="Final Exam">Final Exam</option>
@@ -162,16 +162,16 @@
                                             <label>Marks</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label>Written</label>
+                                            <label>Quiz</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label>MCQ</label>
+                                            <label>Exam</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label>Practical</label>
+                                            <label>Oral</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label>SBA</label>
+                                            <label>Extra</label>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -179,19 +179,19 @@
                                             <label>Full Marks</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="tfull">0</label>
+                                            <label id="tfull">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="wfull">0</label>
+                                            <label id="wfull">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="mfull">0</label>
+                                            <label id="mfull">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="pfull">0</label>
+                                            <label id="pfull">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="cfull">0</label>
+                                            <label id="cfull">0</label><label>%</label>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -199,19 +199,19 @@
                                             <label>Pass Marks</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="tpass">0</label>
+                                            <label id="tpass">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="wpass">0</label>
+                                            <label id="wpass">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="mpass">0</label>
+                                            <label id="mpass">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="ppass">0</label>
+                                            <label id="ppass">0</label><label>%</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <label id="cpass">0</label>
+                                            <label id="cpass">0</label><label>%</label>
                                         </div>
                                     </div>
                                 </div>
@@ -228,10 +228,10 @@
                                             <th>Registration No</th>
                                             <th>Roll No</th>
                                             <th>Name</th>
-                                            <th>Written</th>
-                                            <th>MCQ</th>
-                                            <th>Practical</th>
-                                            <th>SBA</th>
+                                            <th>Quiz</th>
+                                            <th>Exam</th>
+                                            <th>Oral</th>
+                                            <th>Extra</th>
                                             <th>Absent</th>
                                         </tr>
                                         </thead>

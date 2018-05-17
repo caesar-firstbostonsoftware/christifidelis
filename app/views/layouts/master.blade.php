@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>School Manage</title>
+    <title>CHRISTIFIDELIS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -53,6 +53,8 @@
        font-weight: 400;
        line-height: 1.471;
    }
+
+
    </style>
     <!-- jQuery -->
     <script src="<?php echo url();?>/bower_components/jquery/jquery.min.js"></script>
@@ -78,28 +80,30 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <span class="iname">{{Session::get('inName')}}</span>
+        <span class="iname"><a href="/dashboard"><img src="http://localhost:8000/img/favicon.ico"></a><font color="green"> {{Session::get('inName')}}</font></span>
 
         <!-- user dropdown starts -->
         <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
                 <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> {{Session::get('name')}}</span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-user"></i> View Profile</a></li>
+                <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Edit Profile</a></li>
                 <li class="divider"></li>
                 <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
             </ul>
         </div>
+@if (Session::get('userRole')!="Student")        
         <!-- Addmission dropdown starts -->
         <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <!--    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
                 <i class="glyphicon glyphicon-th-large"></i><span class=""> Admission</span>
                 <span class="caret"></span>
-            </button>
+            </button>   -->
             <ul class="dropdown-menu">
                 <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> Applicant List</a></li>
                 <li class="divider"></li>
@@ -118,7 +122,7 @@
 
         <!-- Library dropdown starts -->
         <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
                 <i class="glyphicon glyphicon-book"></i><span class=""> Library</span>
                 <span class="caret"></span>
@@ -140,7 +144,7 @@
         <!-- Library dropdown ends -->
         <!-- Dormitory dropdown starts -->
         <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
                 <i class="glyphicon glyphicon-home"></i><span class=""> Dormitory</span>
                 <span class="caret"></span>
@@ -160,7 +164,7 @@
         <!-- Dormitory dropdown ends -->
         <!-- fees dropdown starts-->
         <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
                 <i class="glyphicon glyphicon-list-alt"></i><span class=""> Fees</span>
                 <span class="caret"></span>
@@ -180,7 +184,7 @@
         <!-- fees dropdown ends -->
       <!-- teacher dropdown starts-->
         <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
                 <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
                 <span class="caret"></span>
@@ -204,12 +208,14 @@
             </ul>
         </div>
         <!-- teacher dropdown ends -->
-
+@endif
     </div>
 </div>
 <!-- topbar ends -->
 <div class="ch-container">
     <div class="row">
+
+
 
         <!-- left menu starts -->
         <div class="col-sm-2 col-lg-2">
@@ -217,9 +223,10 @@
                 <div class="nav-canvas">
                     <div class="nav-sm nav nav-stacked">
 
-                    </div>
+                    </div>                   
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
+@if (Session::get('userRole')!="Student")                         
                         <li><a class="ajax-link" href="/dashboard"><i class="glyphicon glyphicon-th-large"></i><span> Dashboard</span></a>
                         </li>
 
@@ -314,7 +321,7 @@
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-cog"></i><span> Settings</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/gpa">GPA Ruels</a></li>
+                                <li><a href="/gpa">GPA Rules</a></li>
 
                                 <li><a href="/users">Users</a></li>
                                 <li><a href="/holidays">Holidays</a></li>
@@ -324,6 +331,27 @@
                             </ul>
                         </li>
                           @endif
+@else
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Records</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/student/attendance">Attendance</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-star-empty"></i><span> Grades</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/dashboard">Grades</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-tasks"></i><span> Clearance</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/gradesheet">Graduation Clearance</a></li>
+                            </ul>
+                        </li>
+
+@endif
                     </ul>
 
                 </div>
@@ -331,6 +359,7 @@
         </div>
         <!--/span-->
         <!-- left menu ends -->
+
 
         <noscript>
             <div class="alert alert-block col-md-12">
@@ -379,7 +408,7 @@
         <hr>
         <p class="col-md-9 col-sm-9 col-xs-12 copyright"> <a href="#" target="_blank">{{Session::get('inName')}}</a> &copy;{{date('Y')}}</p>
 
-        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Develop by: <a target="_blank" href="http://shanixlab.com">ShanixLab</a></p>
+        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a target="_blank" href="http://firstbostonsoftware.com/">FirstBostonSoftware</a></p>
     </footer>
 
 </div><!--/.fluid-container-->

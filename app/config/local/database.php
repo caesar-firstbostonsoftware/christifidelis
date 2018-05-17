@@ -25,7 +25,7 @@ return array(
             'host'      => 'localhost',
             'database'  => 'c_school_main',
             'username'  => 'root',
-            'password'  => 'toor',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

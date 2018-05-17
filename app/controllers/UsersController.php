@@ -172,4 +172,13 @@ class UsersController extends \BaseController {
     return Redirect::to('/users')->with("success","User Deleted Succesfully.");
 
   }
+
+    public function studentattendance()
+  {
+    $countattendance = Marks::where('regiNo','=',Auth::user()->login)->where('Absent','=','Yes')->orWhere('Absent','=','yes')->count();
+    $attendances = Marks::where('regiNo','=',Auth::user()->login)->where('Absent','=','Yes')->orWhere('Absent','=','yes')->get();
+    return View::Make('app.studentUserAttendance',compact('countattendance','attendances'));
+
+  }
+
 }

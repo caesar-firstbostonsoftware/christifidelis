@@ -130,6 +130,8 @@ class studentController extends \BaseController {
 		$student->parmanentAddress= Input::get('parmanentAddress');
 		$student->isActive= "Yes";
 
+
+
 		$hasStudent = Student::where('regiNo','=',Input::get('regiNo'))->where('class','=',Input::get('class'))->first();
 		if ($hasStudent)
 		{
@@ -139,6 +141,17 @@ class studentController extends \BaseController {
 		}
 		else {
 			$student->save();
+
+		$user = new User;
+        $user->firstname = Input::get('fname');
+        $user->lastname = Input::get('lname');
+        $user->login = Input::get('regiNo');
+        $user->desc = 'Student';
+        $user->email = 'email';
+        $user->group = 'student';
+        $user->password = Hash::make(Input::get('lname'));
+        $user->save();
+
 			Input::file('photo')->move(base_path() .'/public/images',$fileName);
 			return Redirect::to('/student/create')->with("success","Student Admited Succesfully.");
 		}

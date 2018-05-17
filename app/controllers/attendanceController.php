@@ -19,7 +19,7 @@ class attendanceController extends \BaseController
     public function index()
     {
         $classes=array();
-        $classes2 = ClassModel::select('code', 'name')->orderby('code', 'asc')->get();
+        $classes2 = ClassModel::select('code', 'name')->orderby('id', 'asc')->get();
         $subjects = Subject::lists('name', 'code');
         $attendance=array();
         return View::Make('app.attendanceCreate', compact('classes2', 'classes', 'subjects', 'attendance'));
@@ -273,7 +273,7 @@ class attendanceController extends \BaseController
         $formdata->shift="";
         $formdata->session=date('Y');
         $formdata->date=date('d-m-Y');
-        $classes = ClassModel::select('code', 'name')->orderby('code', 'asc')->get();
+        $classes = ClassModel::select('code', 'name')->orderby('id', 'asc')->get();
 
         $attendance=array();
 

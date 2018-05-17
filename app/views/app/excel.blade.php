@@ -36,10 +36,10 @@
     <tr>
         <td colspan="2"></td>
     @foreach($subjects as $subject)
-    <td >Written</td>
-    <td >MCQ</td>
-    <td>Practical</td>
-    <td>SBA</td>
+    <td >Quiz</td>
+    <td >Exam</td>
+    <td>Oral</td>
+    <td>Extra</td>
     <td>Total</td>
     <td>Grade</td>
 

@@ -36,17 +36,22 @@
                      <div class="col-md-12">
                        <div class="col-md-4">
                            <div class="form-group">
-                         <label for="for">Grade For[100 Marks]</label>
+                         <label for="for">GPA for</label>
                          <div class="input-group">
                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                              <select name="for" class="form-control">
-                               @if($gpa->for=="1")
-                               <option value="1" selected="true">100 Marks </option>
-                               <option value="2">50 Marks </option>
-                             @else
-                               <option value="1" >100 Marks </option>
-                               <option value="2" selected="true">50 Marks </option>
-                             @endif
+                               <option value="Grade 1" selected="true">Grade 1</option>
+                               <option value="Grade 2">Grade 2 </option>
+                               <option value="Grade 3">Grade 3 </option>
+                               <option value="Grade 4">Grade 4 </option>
+                               <option value="Grade 5">Grade 5 </option>
+                               <option value="Grade 6">Grade 6 </option>
+                               <option value="Grade 7">Grade 7 </option>
+                               <option value="Grade 8">Grade 8 </option>
+                               <option value="Grade 9">Grade 9 </option>
+                               <option value="Grade 10">Grade 10 </option>
+                               <option value="Grade 11">Grade 11 </option>
+                               <option value="Grade 12">Grade 12 </option>
                              </select>
                          </div>
                      </div>
@@ -71,7 +76,7 @@
                        </div>
                        <div class="col-md-2">
                          <div class="form-group">
-                             <label for="markfrom">Mark From</label>
+                             <label for="markfrom">Mark Percentage From</label>
                              <div class="input-group">
                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                  <input type="text" class="form-control" value="{{$gpa->markfrom}}" required name="markfrom" placeholder="40,60,90 etc">
@@ -80,7 +85,7 @@
                        </div>
                        <div class="col-md-2">
                          <div class="form-group">
-                             <label for="markto">Mark To</label>
+                             <label for="markto">Mark Percentage To</label>
                              <div class="input-group">
                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                  <input type="text" class="form-control" value="{{$gpa->markto}}" required name="markto" placeholder="40,60,90 etc">
@@ -105,8 +110,18 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                             <select name="for" class="form-control">
 
-                              <option value="1">100 Marks </option>
-                              <option value="2">50 Marks </option>
+                               <option value="Grade 1" selected="true">Grade 1</option>
+                               <option value="Grade 2">Grade 2 </option>
+                               <option value="Grade 3">Grade 3 </option>
+                               <option value="Grade 4">Grade 4 </option>
+                               <option value="Grade 5">Grade 5 </option>
+                               <option value="Grade 6">Grade 6 </option>
+                               <option value="Grade 7">Grade 7 </option>
+                               <option value="Grade 8">Grade 8 </option>
+                               <option value="Grade 9">Grade 9 </option>
+                               <option value="Grade 10">Grade 10 </option>
+                               <option value="Grade 11">Grade 11 </option>
+                               <option value="Grade 12">Grade 12 </option>
 
                             </select>
                         </div>
@@ -132,7 +147,7 @@
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
-                            <label for="markfrom">Mark From</label>
+                            <label for="markfrom">Mark Percentage From</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                 <input type="text" class="form-control" required name="markfrom" placeholder="40,60,90 etc">
@@ -141,7 +156,7 @@
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
-                            <label for="markto">Mark To</label>
+                            <label for="markto">Mark Percentage To</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                 <input type="text" class="form-control" required name="markto" placeholder="40,60,90 etc">
@@ -180,15 +195,11 @@
                                                                  @foreach($gpaes as $gpa)
 
                                                                    <tr>
-                                                                     @if($gpa->for=="1")
-                                                                      <td>100 Marks</td>
-                                                                      @else
-                                                                        <td>50 Marks</td>
-                                                                      @endif
+                                                                      <td>{{$gpa->for}}</td>
                                                                       <td>{{$gpa->gpa}}</td>
                                                                      <td>{{$gpa->grade}}</td>
-                                                                     <td>{{$gpa->markfrom}}</td>
-                                                                     <td>{{$gpa->markto}}</td>
+                                                                     <td>{{$gpa->markfrom}}%</td>
+                                                                     <td>{{$gpa->markto}}%</td>
 
                                                              <td>
                                                                        <a title='Edit' class='btn btn-info' href='{{url("/gpa/edit")}}/{{$gpa->id}}'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='{{url("/gpa/delete")}}/{{$gpa->id}}'> <i class="glyphicon glyphicon-trash icon-white"></i></a>

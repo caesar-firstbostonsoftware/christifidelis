@@ -27,9 +27,9 @@
                                     <textarea type="text" class="form-control" required name="description" placeholder="Class Description">{{$class->description}}</textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
+                          <!--  <div class="form-group">
                                 <label>Bangla/Egnlish subject combine pass? <input type="checkbox"  name="combinePass"  @if($class->combinePass) checked @endif ></label>
-                            </div>
+                            </div>   -->
                             <div class="clearfix"></div>
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger">

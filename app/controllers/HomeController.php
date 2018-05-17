@@ -22,10 +22,36 @@ class HomeController extends BaseController {
 		if(!$institute)
 		{
 			$institute=new Institute;
-			$institute->name="ShanixLab";
+			$institute->name="FirstBostonSoftware";
 		}
 		return View::make('login',compact('error','institute'));
 
 	}
+
+		public function gallery()
+	{
+		$error = Session::get('error');
+		$institute=Institute::select('name')->first();
+		if(!$institute)
+		{
+			$institute=new Institute;
+			$institute->name="FirstBostonSoftware";
+		}
+		return View::make('gallery',compact('error','institute'));
+
+	}
+
+		public function soffer()
+	{
+		$error = Session::get('error');
+		$institute=Institute::select('name')->first();
+		if(!$institute)
+		{
+			$institute=new Institute;
+			$institute->name="FirstBostonSoftware";
+		}
+		return View::make('schooloffers',compact('error','institute'));
+
+	}	
 
 }

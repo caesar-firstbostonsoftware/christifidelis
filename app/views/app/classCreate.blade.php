@@ -6,7 +6,7 @@
             <button data-dismiss="alert" class="close" type="button">×</button>
             <strong>Process Success.</strong> {{ Session::get('success')}}<br><a href="/class/list">View List</a><br>
 
-        </div>
+        </div>  
     @endif
     <div class="row">
         <div class="box col-md-12">
@@ -20,29 +20,29 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">Class </label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                 <input type="text" class="form-control" autofocus required name="name" placeholder="Class Name">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name">Numeric Value</label>
+                            <label for="name">Class Code Number</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control" required name="code" placeholder="1,2,3 etc">
+                                <input type="text" class="form-control" name="code" placeholder="1,2,3 etc">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name">Description</label>
+                            <label for="name">Class Details</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                 <textarea type="text" class="form-control" required name="description" placeholder="Class Description"></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
+                      <!--  <div class="form-group">
                             <label>Bangla/Egnlish subject combine pass? <input type="checkbox"  name="combinePass" ></label>
-                        </div>
+                        </div> -->
 
                         <div class="clearfix"></div>
                         @if (count($errors) > 0)
