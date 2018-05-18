@@ -131,13 +131,13 @@
 
                 <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> Book Search</a></li>
                 <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> Borrow Book</a></li>
-                <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> Borrowd Book List</a></li>
+                <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> Borrowed Book List</a></li>
                 <li class="divider"></li>
                     <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> Book List</a></li>
                     <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> Book Entry</a></li>
-                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
+               <!--     <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
                     <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> Monthly Fine Reports</a></li>
-
+-->
 
             </ul>
         </div>
@@ -156,14 +156,14 @@
                 <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> Student List</a></li>
                 <li class="divider"></li>
                     <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> Fee Collection</a></li>
-                    <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> Dormitory Report</a></li>
+           <!--         <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> Dormitory Report</a></li>
                     <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> Fee Reports</a></li>
-
-            </ul>
+-->
+            </ul> 
         </div>
         <!-- Dormitory dropdown ends -->
         <!-- fees dropdown starts-->
-        <div class="btn-group pull-right">
+     <!--   <div class="btn-group pull-right">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
                 <i class="glyphicon glyphicon-list-alt"></i><span class=""> Fees</span>
@@ -180,7 +180,7 @@
                 <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> Fee Collection Report</a></li>
 
             </ul>
-        </div>
+        </div> -->
         <!-- fees dropdown ends -->
       <!-- teacher dropdown starts-->
         <div class="btn-group pull-right">
@@ -198,14 +198,14 @@
                 <li class="divider"></li>
                 <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> Add New Work Outside</a></li>
                 <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
-                <li class="divider"></li>
+        <!--        <li class="divider"></li>
                 {{--<li><a href="/teacher-attendance/create"><i class="glyphicon glyphicon-plus"></i> Add Attendance</a></li>--}}
                 <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
                 <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
                 <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report</a></li>
                 <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report Two</a></li>
 
-            </ul>
+            </ul> -->
         </div>
         <!-- teacher dropdown ends -->
 @endif

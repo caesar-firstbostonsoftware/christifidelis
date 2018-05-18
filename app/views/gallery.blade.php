@@ -24,7 +24,7 @@
 
 
     <!-- Navigation -->
-               <div class="col-md-12"><br>
+               <div class="col-md-12">
                 <h2>CHRISTIPIDELIS Galleries</h2>
             </div>
 

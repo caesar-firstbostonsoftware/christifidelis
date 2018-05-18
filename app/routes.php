@@ -339,8 +339,13 @@ Route::post('/class-off/store', 'attendanceController@classOffStore');
 Route::get('/class-off/delete/{id}', 'attendanceController@classOffDelete');
 
 //gallery shool offer
+Route::post('/parents-guardian', 'HomeController@pguardian');
 Route::get('/gallery', 'HomeController@gallery');
 Route::get('/offer', 'HomeController@soffer');
+Route::get('/search', 'HomeController@searchView');
+Route::get('/news-updates', 'HomeController@news');
+Route::get('/news-updates/show/{id}', 'HomeController@shownews');
+
 
 
 //fire attendance command

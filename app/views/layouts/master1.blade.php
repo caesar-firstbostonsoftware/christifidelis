@@ -130,8 +130,11 @@ h2{
         <a class="nav-link" href="/offer">School Offers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Parents/Guardian</a>
+        <a class="nav-link" href="/search">Parents/Guardian</a>
       </li>
+          <li class="nav-item">
+        <a class="nav-link" href="/news-updates">News/Updates</a>
+      </li>      
       </ul>
       <ul>
       <li class="navbar-nav nav-item">

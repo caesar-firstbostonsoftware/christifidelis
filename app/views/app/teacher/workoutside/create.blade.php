@@ -14,7 +14,7 @@
     <div class="box col-md-12">
       <div class="box-inner">
         <div data-original-title="" class="box-header well">
-          <h2><i class="glyphicon glyphicon-user"></i> New Work Outside Etnry</h2>
+          <h2><i class="glyphicon glyphicon-user"></i> New Work Outside Entry</h2>
 
         </div>
         <div class="box-content">

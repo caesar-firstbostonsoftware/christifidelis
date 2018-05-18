@@ -104,7 +104,7 @@ h2{
         <div>
 <!-- topbar starts -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="img/logo.png" height="42" width="42"></a>
+  <a class="navbar-brand" href="/"><img src="http://localhost:8000/img/logo.png" height="42" width="42"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -121,8 +121,12 @@ h2{
         <a class="nav-link" href="/offer">School Offers</a>
       </li>
           <li class="nav-item">
-        <a class="nav-link" href="#">Parents/Guardians</a>
-      </li></ul>
+        <a class="nav-link" href="/search">Parents/Guardians</a>
+      </li>
+          <li class="nav-item">
+        <a class="nav-link" href="/news-updates">News/Updates</a>
+      </li>
+          </ul>
       <ul>
       <li class="navbar-nav nav-item">
         <a class="nav-link" href="/">Login</a>

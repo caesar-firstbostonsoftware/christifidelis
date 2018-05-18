@@ -84,7 +84,6 @@
                                           <div class="input-group">
                                               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                               <select name="status" class="form-control">
-                                                <option value="">Status</option>
                                                   <option value="Borrowed">Borrowed</option>
                                                  <option value="Returned">Returned</option>
 
