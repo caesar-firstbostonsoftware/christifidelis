@@ -181,4 +181,10 @@ class UsersController extends \BaseController {
 
   }
 
+      public function studentclearance()
+  {
+    return View::Make('app.studentUserClearance');
+
+  }
+
 }

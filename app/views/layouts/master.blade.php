@@ -90,7 +90,7 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#"><i class="glyphicon glyphicon-user"></i> View Profile</a></li>
+                <li><a title='View' href='{{url("/student/view")}}/{{Auth::user()-> id}}'><i class="glyphicon glyphicon-user"></i> View Profile</a></li>
                 <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Edit Profile</a></li>
                 <li class="divider"></li>
                 <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
@@ -347,7 +347,7 @@
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span> Clearance</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/gradesheet">Graduation Clearance</a></li>
+                                <li><a href="/student/clearance">Graduation Clearance</a></li>
                             </ul>
                         </li>
 

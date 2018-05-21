@@ -55,7 +55,7 @@
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#myModal" data-toggle="modal" data-img-url="/images/gallery/4.jpg">
             <img class="img-fluid img-thumbnail gallery" src="/images/gallery/4.jpg" style="height: 200px; width: 400px; margin-top: 30px" alt="">
-            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            <div class="fb-like" data-href="http://www.auburnaquaticcentre.com.au/wp-content/uploads/2017/04/GZ_0312-1024x683.jpg" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
           </a>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">

@@ -23,6 +23,7 @@ Route::get('/userdelete/{id}', 'UsersController@delete');
 
 
 Route::get('/student/attendance', 'UsersController@studentattendance');
+Route::get('/student/clearance', 'UsersController@studentclearance');
 
 //Route::get('/users/regi','UsersController@postRegi');
 
