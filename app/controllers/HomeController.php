@@ -25,6 +25,12 @@ class HomeController extends BaseController {
 			$institute=new Institute;
 			$institute->name="FirstBostonSoftware";
 		}
+ $newnews = News::latest()->first();
+ 		//dd($new->created_at);
+$startdiff = $newnews->created_at->diffInDays();
+Session::put('startdiff', $startdiff);
+
+
 		return View::make('login',compact('error','institute'));
 
 	}
@@ -62,15 +68,15 @@ class HomeController extends BaseController {
 		$name = $firstName . " " . $lastName;
 		//dd($firstName);
 		$stud = Student::where('firstName','=',$firstName)->where('lastName','=',$lastName)->first();
-		//dd($stud->regiNo);
-		$grades = Marks::select('*')->where('regiNo','=',$stud->regiNo)->get();
+		//dd($stud['regiNo']);
+		$grades = Marks::select('*')->where('regiNo','=',$stud['regiNo'])->get();
  		$date = Carbon::now();
  		$subjects = Subject::all(); 
 
  		$gradeshistories = Marks::select('session')->Distinct('session')->get();
 
 
- 		$attendance = Attendance::where('regiNo','=',$stud->regiNo)->get();
+ 		$attendance = Attendance::where('regiNo','=',$stud['regiNo'])->get();
  		//dd($attendance->date->month);
 		$error = Session::get('error');
 		$institute=Institute::select('name')->first();
@@ -96,11 +102,48 @@ class HomeController extends BaseController {
 
 	}
 
+		public function createnews()
+	{
+		$error = Session::get('error');
+
+		return View::make('app/createnews',compact('error'));
+
+	}
+
+		public function savenews()
+	{
+		$rules=[
+			'newsTitle' => 'required',
+			'news' => 'required',
+		];
+		$validator = \Validator::make(Input::all(), $rules);
+		if ($validator->fails())
+		{
+			return Redirect::to('create-news')->withinput(Input::all())->withErrors($validator);
+		}
+		else {
+			$news=new News;
+
+			$news->newsTitle = Input::get('newsTitle');
+			$news->news = Input::get('news');
+
+			$news->save();
+
+			return Redirect::to('create-news')->with('success', 'News/Updates saved.');
+
+		}
+
+	}
+
+
 		public function news()
 	{
  		$date = Carbon::now();
- 		$news = News::all(); 
- 		//dd($news);
+ 		$news = News::orderBy('updated_at', 'DESC')->get();
+ $newnews = News::latest()->first();
+ 		//dd($new->created_at);
+//$startdiff = $newnews->created_at->diffInDays(); 
+//dd($diff);
 		$error = Session::get('error');
 		$institute=Institute::select('name')->first();
 		if(!$institute)
@@ -127,5 +170,19 @@ class HomeController extends BaseController {
 		return View::make('shownewsupdate',compact('error','institute', 'date', 'news'));
 
 	}
+
+	public function teacherview($id)
+{
+
+		$id = User::where('id',$id)->pluck('login');
+        //dd($id);
+        $teacher = Teachers::where('regNo',$id)->where('isActive',1)->first();
+        $cl = Leaves::where('regNo',$id)->where('lType','CL')->whereYear('leaveDate','=',date('Y'))->where('status',2)->count();
+        $ml = Leaves::where('regNo',$id)->where('lType','ML')->whereYear('leaveDate','=',date('Y'))->where('status',2)->count();
+        $ul = Leaves::where('regNo',$id)->where('lType','UL')->whereYear('leaveDate','=',date('Y'))->where('status',2)->count();
+
+        return View::Make("app.teacher.details",compact('teacher','cl','ml','ul'));
+
+}
 
 }

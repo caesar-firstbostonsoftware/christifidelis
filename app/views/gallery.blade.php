@@ -97,7 +97,7 @@
         <div class="col-lg-3 col-md-4 col-xs-6">
           <a href="#myModal" data-toggle="modal" data-img-url="/images/gallery/11.jpg">
             <img class="img-fluid img-thumbnail gallery" src="/images/gallery/11.jpg" style="height: 200px; width: 400px; margin-top: 30px" alt="">
-            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            <div class="fb-like" data-href="https://changespsychology.com.au/wp-content/uploads/2016/06/kids-and-sports-300x262.jpg" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
           </a>
         </div>
 
@@ -105,7 +105,7 @@
 
     </div>
     <!-- /.container -->
-
+<br>
                   <!-- Modal -->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <button type="button" class="close" data-dismiss="modal"><b><font color="white">X</font></b></button>

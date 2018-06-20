@@ -55,9 +55,9 @@ return array(
         'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'school',
-            'username'  => '',
-            'password'  => '',
+            'database'  => 'c_school_main',
+            'username'  => 'ggoston_school',
+            'password'  => '#123Gerson$',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

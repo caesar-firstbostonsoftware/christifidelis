@@ -1,5 +1,3 @@
-
-
 @extends('layouts.master2')
 
 @section('content')
@@ -36,8 +34,8 @@
     <div class="row">
 
 
-            <div class="col-md-12" align="center">
-                <h2>CHISTIFIDELIS News and Updates</h2>
+            <div class="col-md-12" align="center"><br>
+                <h2>CHISTIFIDELIS News and Updates </h2>
             </div>
             <!--/span-->
 <br>
@@ -47,8 +45,16 @@
   <legend style="text-align: center"> <font color="green">News And Updates</font></legend>
   <div class="container-fluid">
   @foreach ($news as $new)  
+<?php $diff = $new->created_at->diffInDays() ?>
   <div class="row">
-   <div><p  style="text-align: right;"><sub><font color="red"><i> {{$new->created_at->diffForHumans($date)}}</i></font></sub></p>
+<div class="container-fluid">
+<div class="row"><div class="col-md-6"><p>{{$new->newsTitle}}
+@if($diff <= 7)
+<sup><span class="new1"><b>new</b></span></sup>
+@endif
+</p></div><div class="col-md-6"><p  style="text-align: right;"><sub><font color="red"><i> {{$new->created_at->diffForHumans($date)}}</i></font></sub></p></div></div>
+</div>
+<div>
 <a href="{{ url('/news-updates/show/'.$new->id) }}"> {{str_limit($new->news, $limit = 400, $end = '...')}}</a></div>
 </div><br>
 <hr>

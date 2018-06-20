@@ -65,7 +65,7 @@
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="http://cebuwebsites.com/public/img/favicon.ico">
 
 </head>
 
@@ -80,7 +80,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <span class="iname"><a href="/dashboard"><img src="http://localhost:8000/img/favicon.ico"></a><font color="green"> {{Session::get('inName')}}</font></span>
+        <span class="iname"><a href="/dashboard"><img src="http://cebuwebsites.com/img/favicon.ico"></a><font color="green"> {{Session::get('inName')}}</font></span>
 
         <!-- user dropdown starts -->
         <div class="btn-group pull-right">
@@ -90,7 +90,11 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a title='View' href='{{url("/student/view")}}/{{Auth::user()-> id}}'><i class="glyphicon glyphicon-user"></i> View Profile</a></li>
+@if (Session::get('userRole')=="Student")   
+                <li><a title='View' href='{{url("/student/view")}}/{{Auth::user()-> login}}'><i class="glyphicon glyphicon-user"></i> View Profile</a></li>
+@else
+                <li><a title='View' href='{{url("/teacher/profile")}}/{{Auth::user()-> id}}'><i class="glyphicon glyphicon-user"></i> View Profile</a></li>
+@endif                
                 <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Edit Profile</a></li>
                 <li class="divider"></li>
                 <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
@@ -119,7 +123,7 @@
         <!-- admission dropdown ends -->
 
 
-
+@if (Session::get('userRole')=="Librarian" || Session::get('userRole')=="Admin")  
         <!-- Library dropdown starts -->
         <div class="btn-group pull-right">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -142,6 +146,7 @@
             </ul>
         </div>
         <!-- Library dropdown ends -->
+@endif
         <!-- Dormitory dropdown starts -->
         <div class="btn-group pull-right">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -183,6 +188,7 @@
         </div> -->
         <!-- fees dropdown ends -->
       <!-- teacher dropdown starts-->
+@if(Session::get('userRole')!="Teacher")
         <div class="btn-group pull-right">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
@@ -207,6 +213,7 @@
 
             </ul> -->
         </div>
+@endif        
         <!-- teacher dropdown ends -->
 @endif
     </div>
@@ -263,10 +270,10 @@
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Mark Manage</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Manage Grades</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/mark/create">Add New</a></li>
-                                <li><a href="/mark/list">Marks List</a></li>
+                                <li><a href="/mark/list">Grades List</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
@@ -288,11 +295,12 @@
                                 <li><a href="/accounting/sectors">Sectors</a></li>
                                 <li><a href="/accounting/income">Add Income</a></li>
                                 <li><a href="/accounting/incomelist">View Income</a></li>
-                                <li><a href="/accounting/expence">Add Expence</a></li>
-                                <li><a href="/accounting/expencelist">View Expence</a></li>
+                                <li><a href="/accounting/expence">Add Expense</a></li>
+                                <li><a href="/accounting/expencelist">View Expense</a></li>
 
                             </ul>
                         </li>
+<!--
                        <li class="accordion">
 
                           <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> SMS</span></a>
@@ -303,6 +311,7 @@
 
                           </ul>
                       </li>
+-->
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-print"></i><span> Reports</span></a>
                             <ul class="nav nav-pills nav-stacked">
@@ -327,6 +336,9 @@
                                 <li><a href="/holidays">Holidays</a></li>
                                 <li><a href="/class-off">Class Off Days</a></li>
                                 <li><a href="/institute">Institute</a></li>
+                                <li><a href="/create-news">News/Updates</a></li>
+                                <li><a href="/#">Gallery</a></li>
+                                <li><a href="/#">School Offers</a></li>
 
                             </ul>
                         </li>
@@ -348,6 +360,13 @@
                             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span> Clearance</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/student/clearance">Graduation Clearance</a></li>
+                            </ul>
+                        </li>
+                       <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-eye-open"></i><span> Class Schedules</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/student/classoff">Class Off</a></li>
+                                <li><a href="/student/holiday">Holidays</a></li>
                             </ul>
                         </li>
 

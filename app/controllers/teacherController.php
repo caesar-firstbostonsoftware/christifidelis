@@ -51,7 +51,7 @@ class teacherController extends \BaseController {
             'joinDate' => 'required',
             'photo' => 'required|mimes:jpeg,jpg,png',
             'cellNo' => 'required',
-            'educationQualification' => 'required',
+            //'educationQualification' => 'required',
             'presentAddress' => 'required',
             'parmanentAddress' => 'required'
         ];
@@ -81,6 +81,16 @@ class teacherController extends \BaseController {
             $teacher->parmanentAddress= Input::get('parmanentAddress');
             $teacher->isActive=1;
 
+        $user = new User;
+        $user->firstname = Input::get('fullName');
+        $user->lastname = ' ';
+        $user->login = Input::get('regNo');
+        $user->desc = Input::get('egroup');
+        $user->email = Input::get('regNo');
+        $user->group = Input::get('egroup');
+        $user->password = Hash::make(Input::get('cellNo'));
+        
+
             $hasTeacher = Teachers::where('regNo','=',Input::get('regNo'))->where('isActive',1)->first();
             if ($hasTeacher)
             {
@@ -91,7 +101,8 @@ class teacherController extends \BaseController {
             else {
                 Input::file('photo')->move(base_path() .'/public/images/teachers',$fileName);
                 $teacher->save();
-                return Redirect::to('/teacher/create')->with("success","Teacher added succesfully.");
+                $user->save();
+                return Redirect::to('/teacher/create')->with("success","Employee added succesfully.");
             }
 
 
@@ -1152,5 +1163,9 @@ class teacherController extends \BaseController {
 
         return View::Make('app.teacher.monthly_attendance_two',compact('yearMonth'));
     }
+
+
+
+
 
 }

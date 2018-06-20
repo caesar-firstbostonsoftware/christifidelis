@@ -138,7 +138,7 @@
                                                                   <td>{{$student->fatherCellNo.'<br>' }}{{$student->motherCellNo.'<br>'}}{{$student->localGuardianCell}}</td>
                                                                   <td>{{$student->presentAddress}}</td>
                                                        <td>
-                                                  <a title='View' class='btn btn-success' href='{{url("/student/view")}}/{{$student->id}}'> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>&nbsp&nbsp<a title='Edit' class='btn btn-info' href='{{url("/student/edit")}}/{{$student->id}}'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='{{url("/student/delete")}}/{{$student->id}}'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                                  <a title='View' class='btn btn-success' href='{{url("/student/view")}}/{{$student->regiNo}}'> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>&nbsp&nbsp<a title='Edit' class='btn btn-info' href='{{url("/student/edit")}}/{{$student->id}}'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='{{url("/student/delete")}}/{{$student->id}}'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
                                                                </td>
                                                            @endforeach
                                                            </tbody>

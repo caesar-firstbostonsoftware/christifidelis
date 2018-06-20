@@ -1,5 +1,3 @@
-
-
 @extends('layouts.master2')
 
 @section('content')
@@ -34,10 +32,15 @@
 
     <div class="row">
 
-
+@if(count($grades)==0)
             <div class="col-md-12" align="center">
-                <h2>CHISTIFIDELIS Parents/Guardian Helper</h2>
-                <h3><center>Year {{$date->year}} - {{$name}}'s latest records</center></h3>
+                <h2>CHISTIFIDELIS Parents/Guardian Helper</h2><br>
+                <h3><center>Year {{$date->year}}</h3> <h4><font color="red"> Student {{ucwords($name)}} is not enrolled.</font> </center></h4>
+            </div>
+@else
+            <div class="col-md-12" align="center">
+                <h2>CHISTIFIDELIS Parents/Guardian Helper</h2><br>
+                <h3><center>Year {{$date->year}} - {{ucwords($name)}}'s latest records</center></h3>
             </div>
             <!--/span-->
 <br>
@@ -105,7 +108,7 @@
   </table>
 </div>
             <!--/span-->
-
+@endif
     </div><!--/fluid-row-->
 
 </div><!--/.fluid-container-->

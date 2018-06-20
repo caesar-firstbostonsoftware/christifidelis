@@ -147,8 +147,8 @@ class studentController extends \BaseController {
         $user->lastname = Input::get('lname');
         $user->login = Input::get('regiNo');
         $user->desc = 'Student';
-        $user->email = 'email';
-        $user->group = 'student';
+        $user->email = Input::get('regiNo');
+        $user->group = 'Student';
         $user->password = Hash::make(Input::get('lname'));
         $user->save();
 
@@ -222,14 +222,15 @@ public function getList()
 
 public function view($id)
 {
-	$student=	DB::table('Student')
+//dd($id);
+	$student= DB::table('Student')
 	->join('Class', 'Student.class', '=', 'Class.code')
 	->select('Student.id', 'Student.regiNo','Student.rollNo','Student.firstName','Student.middleName','Student.lastName',
 	'Student.fatherName','Student.motherName', 'Student.fatherCellNo','Student.motherCellNo','Student.localGuardianCell',
 	'Class.Name as class','Student.presentAddress','Student.gender','Student.religion','Student.section','Student.shift','Student.session',
 	'Student.group','Student.dob','Student.bloodgroup','Student.nationality','Student.photo','Student.extraActivity','Student.remarks',
 	'Student.localGuardian','Student.parmanentAddress','Student.fourthSubject','Student.cphsSubject')
-	->where('Student.id','=',$id)->first();
+	->where('Student.regiNo','=',$id)->first();
 
 	return View::Make("app.studentView",compact('student'));
 }

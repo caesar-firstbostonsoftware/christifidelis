@@ -20,6 +20,8 @@ class DashboardController extends \BaseController {
 		$tsubject = Subject::count();
 		$tstudent=Student::count();
 		$totalAttendance = Teachers::count();
+$totalClassOff = ClassOff::count();
+$totalHoliday = Holidays::count();
  		//$totalAttendance = Attendance::groupBy('date')->get();
  		//$totalExam = Marks::groupBy('exam')->groupBy('subject')->get();
  		$totalExam = 0;
@@ -31,6 +33,8 @@ class DashboardController extends \BaseController {
  			//'attendance' =>count($totalAttendance),
  			//'exam' =>count($totalExam),
  			'attendance' =>$totalAttendance,
+'classoff' =>$totalClassOff,
+'holiday' =>$totalHoliday,
  			'exam' =>$totalExam,
 			'book' => $book
  		];

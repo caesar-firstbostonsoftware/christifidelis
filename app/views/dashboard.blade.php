@@ -18,6 +18,67 @@
   color: #1ABB9C;
 }
 
+
+/* unvisited link */
+a.red:link {
+    color: red;
+}
+
+/* visited link */
+a.red:visited {
+    color: red;
+}
+
+/* mouse over link */
+a.red:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a.red:active {
+    color: blue;
+}
+
+/* unvisited link */
+a.green:link {
+    color: green;
+}
+
+/* visited link */
+a.green:visited {
+    color: green;
+}
+
+/* mouse over link */
+a.green:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a.green:active {
+    color: blue;
+}
+
+/* unvisited link */
+a.orange:link {
+    color: orange;
+}
+
+/* visited link */
+a.orange:visited {
+    color: orange;
+}
+
+/* mouse over link */
+a.orange:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a.orange:active {
+    color: blue;
+}
+
 </style>
 @stop
 @section('content')
@@ -35,29 +96,29 @@
     <div class="row tile_count text-center">
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-2x fa-home green"></i> Sections</span>
-        <div class="count red">{{$total['class']}}</div>
+        <div class="count "><a href="/class/list" class="red">{{$total['class']}}</a></div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-2x fa-users green"></i> Students</span>
-        <div class="count blue">{{$total['student']}}</div>
+        <div class="count blue"><a href="/student/list" class="green">{{$total['student']}}</a></div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-2x fa-file green"></i> Subjects</span>
-        <div class="count yellow">{{$total['subject']}}</div>
+        <div class="count yellow"><a href="/subject/list" class="orange">{{$total['subject']}}</a></div>
       </div>
     </div>
     <div class="row tile_count text-center">
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-2x fa-edit green"></i> Teachers/Staffs</span>
-        <div class="count red">{{$total['attendance']}}</div>
+        <div class="count red"><a href="/teacher/list" class="red">{{$total['attendance']}}</a></div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-pencil green"></i> Memos</span>
-        <div class="count blue">{{$total['exam']}}</div>
+        <span class="count_top"><i class="fa fa-2x fa-pencil green"></i> Class Off</span>
+        <div class="count blue"><a href="/class-off" class="green">{{$total['classoff']}}</a></div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-book green"></i> Books</span>
-        <div class="count yellow">{{$total['book']}}</div>
+        <span class="count_top"><i class="fa fa-2x fa-book green"></i> Holidays</span>
+        <div class="count yellow"><a href="/student/holiday" class="orange">{{$total['holiday']}}</a></div>
       </div>
     </div>
     <!-- /top tiles -->

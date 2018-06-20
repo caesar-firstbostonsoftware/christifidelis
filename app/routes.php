@@ -24,6 +24,8 @@ Route::get('/userdelete/{id}', 'UsersController@delete');
 
 Route::get('/student/attendance', 'UsersController@studentattendance');
 Route::get('/student/clearance', 'UsersController@studentclearance');
+Route::get('/student/classoff', 'UsersController@studentclassoff');
+Route::get('/student/holiday', 'UsersController@studentholiday');
 
 //Route::get('/users/regi','UsersController@postRegi');
 
@@ -134,6 +136,8 @@ Route::post('/tabulation', 'tabulationController@getsheet');
 //settings
 Route::get('/settings', 'settingsController@index');
 Route::post('/settings', 'settingsController@save');
+Route::get('/create-news', 'HomeController@createnews');
+Route::post('/create-news', 'HomeController@savenews');
 
 Route::get('/institute', 'instituteController@index');
 Route::post('/institute', 'instituteController@save');
@@ -296,6 +300,7 @@ Route::get('/teacher/view/{id}', 'teacherController@view');
 Route::get('/teacher/edit/{id}', 'teacherController@edit');
 Route::post('/teacher/update', 'teacherController@update');
 Route::get('/teacher/delete/{id}', 'teacherController@delete');
+Route::get('/teacher/profile/{id}', 'HomeController@teacherview');
 
 //teacher attendance
 //Route::get('/teacher-attendance/create','teacherController@createAttendance');

@@ -36,7 +36,7 @@
                                 <div class="col-md-12">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="gpa">Fist Name</label>
+                                            <label for="gpa">First Name</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                                 <input type="text" class="form-control" required name="firstname" value="{{$user->firstname}}" placeholder="">
@@ -88,7 +88,7 @@
 
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                {{ Form::select('group',['Admin'=>'Admin','Management'=>'Management','Other'=>'Other'],$user->group,['class'=>'form-control','required'=>'true'])}}
+                                                {{ Form::select('group',['Admin'=>'Admin','Management'=>'Management','teacher'=>'teacher','librarian'=>'librarian','Other'=>'Other'],$user->group,['class'=>'form-control','required'=>'true'])}}
 
                                             </div>
                                         </div>
@@ -118,7 +118,7 @@
                                 <div class="col-md-12">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="gpa">Fist Name</label>
+                                            <label for="gpa">First Name</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                                 <input type="text" class="form-control" required name="firstname"  placeholder="">
@@ -172,6 +172,8 @@
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                                 <select name="group"  required="true" class="form-control" >
                                                     <option value="Admin">Admin</option>
+                                                    <option value="Teacher">Teacher</option>
+                                                    <option value="Librarian">Librarian</option>
                                                     <option value="Management">Management</option>
                                                     <option value="Other">Other</option>
                                                 </select>

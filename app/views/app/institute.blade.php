@@ -43,7 +43,7 @@
 
                                     <div class="col-md-10">
                                         <div class="form-group">
-                                            <label for="type">Name</label>
+                                            <label for="type">School Name</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                                 <input type="text" class="form-control" required name="name" placeholder="Institute Name" value="{{$institute->name}}">
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="type">Establish</label>
+                                            <label for="type">Established Year</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                                 <input type="text" class="form-control" required name="establish" placeholder="1990" value="{{$institute->establish}}">
@@ -68,7 +68,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="type">Web Stie</label>
+                                            <label for="type">Web Site</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                                 <input type="text"  class="form-control" required name="web" placeholder="www.shanixlab.com" value="{{$institute->web}}">

@@ -24,7 +24,7 @@
     box-shadow: 5px 10px 8px #888888;
 }
 
-h2{
+h2, .new1{
     -webkit-animation: color-change 2s infinite;
     -moz-animation: color-change 2s infinite;
     -o-animation: color-change 2s infinite;
@@ -105,7 +105,9 @@ h2{
   <meta property="og:description"   content="Your description" />
   <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
 
-  
+     <!-- The fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+ 
 </head>
 
 <body>
@@ -133,7 +135,13 @@ h2{
         <a class="nav-link" href="/search">Parents/Guardian</a>
       </li>
           <li class="nav-item">
-        <a class="nav-link" href="/news-updates">News/Updates</a>
+                <a class="nav-link" href="/news-updates">News/Updates
+@if(Session::has('startdiff'))
+@if(Session::get('startdiff') <= 7)
+<sup><span class="new1"><b>new</b></span></sup>
+@endif
+@endif
+</a>
       </li>      
       </ul>
       <ul>

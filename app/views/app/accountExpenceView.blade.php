@@ -22,7 +22,7 @@
         <div class="box col-md-12">
             <div class="box-inner">
                 <div data-original-title="" class="box-header well">
-                    <h2><i class="glyphicon glyphicon-book"></i> Expence List</h2>
+                    <h2><i class="glyphicon glyphicon-book"></i> Expense List</h2>
 
                 </div>
                 <div class="box-content">
@@ -37,7 +37,7 @@
 
                                         <div class="col-md-3">
                                             <div class="form-group ">
-                                                <label for="session">Expence Year</label>
+                                                <label for="session">Expense Year</label>
                                                 <div class="input-group">
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>

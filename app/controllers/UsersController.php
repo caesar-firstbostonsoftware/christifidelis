@@ -187,4 +187,17 @@ class UsersController extends \BaseController {
 
   }
 
+    public function studentclassoff()
+  {
+    $classoff = ClassOff::all();
+    return View::Make('app.studentUserClassOff',compact('classoff'));
+
+  }
+    public function studentholiday()
+  {
+    $holidays = Holidays::orderBy('holiDate','DESC')->get();
+    return View::Make('app.studentUserHoliday',compact('holidays'));
+
+  }
+
 }

@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 @section('style')
 
@@ -75,8 +74,6 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                             <?php  $data=[
-                                                    'Class Test'=>'Class Test',
-                                                    'Model Test'=>'Model Test',
                                                     'First Term'=>'First Term',
                                                     'Mid Term'=>'Mid Term',
                                                     'Final Exam'=>'Final Exam'

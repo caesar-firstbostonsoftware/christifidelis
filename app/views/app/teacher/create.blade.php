@@ -65,6 +65,7 @@
                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                     <select name="egroup" class="form-control" required >
                       <option value="Teacher">Teacher</option>
+                      <option value="Librarian">Librarian</option>
                       <option value="Staff">Staff</option>
                     </select>
                   </div>
@@ -97,9 +98,12 @@
                   <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                     <select name="religion" class="form-control" required >
+                      <option value="Catholic">Catholic</option>
+<option value="Iglesia">Iglesia</option>
+<option value="Protestant">Protestant</option>
                       <option value="Islam">Islam</option>
                       <option value="Hindu">Hindu</option>
-                      <option value="Cristian">Cristian</option>
+                      <option value="Christian">Christian</option>
                       <option value="Buddhist">Buddhist</option>
                       <option value="Other">Other</option>
                     </select>
@@ -113,6 +117,7 @@
                   <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                     <select name="bloodgroup" class="form-control" required >
+                      <option value="N/A">N/A</option>
                       <option value="A+">A+</option>
                       <option value="A-">A-</option>
                       <option value="B+">B+</option>
@@ -132,7 +137,7 @@
                   <label for="nationality">Nationality</label>
                   <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                    <input type="text" class="form-control" value="Bangladeshi" required  name="nationality" placeholder="Nationality">
+                    <input type="text" class="form-control" value="Filipino" required  name="nationality" placeholder="Nationality">
                   </div>
                 </div>
               </div>
